@@ -1,0 +1,10 @@
+/* REXX */                                                              00010000
+SAY "INTRODUCE UN NUMERO MENOR DE 20"                                   00020000
+PULL LIMITE                                                             00030000
+N = 0                                                                   00040000
+DO LIMITE                                                               00050000
+ N = N + 1                                                              00060000
+ IF N // 2 = 0 THEN SAY N "ES PAR"                                      00070000
+ ELSE SAY N "ES IMPAR"                                                  00080000
+END                                                                     00090000
+

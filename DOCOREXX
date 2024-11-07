@@ -1,0 +1,9 @@
+/* REXX */                                                              00010000
+SAY "NOMBRE DE ANIMAL QUE TIENE LAS CINCO VOCALES?"                     00020001
+DO I = 1 TO 3 UNTIL ANIMAL = "MURCIELAGO"                               00030001
+ SAY "INTENTO" I "DE" 3"."                                              00031001
+ PULL ANIMAL                                                            00040001
+END                                                                     00050001
+IF ANIMAL = "MURCIELAGO" THEN SAY "BIEN HECHO!"                         00060001
+ELSE SAY "NO PASA NADA, LA RESPUESTA ES MURCIELAGO".                    00070001
+

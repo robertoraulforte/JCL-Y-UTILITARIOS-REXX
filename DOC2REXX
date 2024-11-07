@@ -1,0 +1,18 @@
+/* REXX */                                                              00010000
+SAY "INTRODUCE UN NUMERO ENTRE 15 Y 25"                                 00020000
+PULL FINAL                                                              00030000
+/*                                                                      00031000
+DO I = 0 TO FINAL BY 3                                                  00040000
+ SAY I                                                                  00050000
+END                                                                     00060000
+                                                                        00070000
+SAY "VAMOS A SACAR 10 NUMEROS EMPEZANDO EN 10"                          00080000
+DO I = 10 TO FINAL FOR 10                                               00090000
+ SAY I                                                                  00100000
+END                                                                     00110000
+*/                                                                      00120000
+SAY "VAMOS A CONTAR DE 4 EN 4 HACIA ATRAS"                              00130000
+DO I = FINAL TO 0 BY -4                                                 00140000
+ SAY I                                                                  00150000
+END                                                                     00160000
+

@@ -1,0 +1,12 @@
+/* REXX */                                                              00001001
+"ISPEXEC LIBDEF ISPPLIB DATASET ID('Z56575.CURSO')"                     00010001
+"ISPEXEC TBCREATE TABLE1 NAMES(TABLE1) REPLACE NOWRITE"                 00010101
+"ISPEXEC TBVCLEAR TABLE1"                                               00010201
+DO I = 1 TO REG.0                                                       00010301
+     TABLE1 = REG.I                                                     00010401
+     "ISPEXEC TBADD TABLE1"                                             00010501
+END                                                                     00010601
+"ISPEXEC TBTOP TABLE1"                                                  00010701
+"ISPEXEC TBDISPL TABLE1 PANEL(PANELSAL)"                                00010801
+RETURN                                                                  00010901
+

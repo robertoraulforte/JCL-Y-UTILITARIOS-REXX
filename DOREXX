@@ -1,0 +1,15 @@
+/*  REXX */                                                             00010000
+CONTADOR = 8                                                            00020000
+INICIO :                                                                00030000
+SAY "INTRODUCE TU USUARIO"                                              00040000
+PULL USUARIO                                                            00050000
+IF USUARIO ="" THEN DO                                                  00060000
+   SAY "NO HAS INTRODUCIDO EL USUARIO"                                  00070000
+   CALL INICIO                                                          00080000
+END                                                                     00090000
+ELSE DO                                                                 00100000
+   SAY "TU USUARIO HA SIDO GRABADO"                                     00110000
+   CONTADOR = CONTADOR + 1                                              00120000
+END                                                                     00130000
+SAY CONTADOR "USUARIOS GRABADOS"                                        00140000
+
