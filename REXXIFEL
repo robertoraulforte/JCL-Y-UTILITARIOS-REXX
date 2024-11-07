@@ -1,0 +1,6 @@
+/* REXX */                                                              00010001
+SAY "INTRODUCE TU EDAD"                                                 00020001
+PULL EDAD                                                               00030001
+IF EDAD < 18 THEN SAY "NO PUEDES VOTAR"                                 00040001
+ELSE SAY "PUEDES VOTAR"                                                 00050001
+

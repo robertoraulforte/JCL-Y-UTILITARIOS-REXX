@@ -1,0 +1,5 @@
+/* REXX */                                                              00010001
+ADDRESS ISPEXEC "SELECT PGM(ISREDIT) PARM('COMPARE')"                   00020001
+ADDRESS ISREDIT "COMPARE DATASET('"ARCHIVO1"')                          00030001
+        WITH DATASET('"ARCHIVO2"') OUTPUT('"ARCHIVO3"')"                00040001
+

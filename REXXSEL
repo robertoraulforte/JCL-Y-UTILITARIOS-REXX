@@ -1,0 +1,11 @@
+/* REXX */                                                              00010000
+SAY "INDICA ASIGNATURA PARA SABER EL AULA"                              00020000
+PULL ASIGNATURA                                                         00030000
+SELECT                                                                  00040000
+ WHEN ASIGNATURA ="LENGUA" THEN AULA="AULA 1"                           00050000
+ WHEN ASIGNATURA ="MATEMATICAS" THEN AULA="AULA 2"                      00060000
+ WHEN ASIGNATURA ="SOCIALES" THEN AULA="AULA 3"                         00070000
+ OTHERWISE AULA ="NO HAY AULA ASOCIADA"                                 00080000
+END                                                                     00090000
+SAY AULA                                                                00100000
+

@@ -1,0 +1,8 @@
+/* REXX */                                                              00010000
+/* REFRESH CACHE */                                                     00010101
+  DO RUN_I = 1 TO 10                                                    00010200
+     "ISPEXEC CONTROL NONDISPL END"                                     00010300
+     "ISPEXEC DISPLAY PANEL(ISR003"RIGHT(RUN_I,2,'0')")"                00010400
+  END                                                                   00010500
+RETURN                                                                  00010601
+

@@ -1,0 +1,14 @@
+/* REXX */                                                              00010002
+/*SAY "INTRODUCE TU NOMBRE"*/                                           00020002
+/*PARSE PULL NOMBRE*/                                                   00030002
+/*Y "BUENOS DIAS :" NOMBRE"."*/                                         00040002
+VAR1="ABCD"                                                             00050002
+SAY "VAR1 ANTES DE DROP:" VAR1                                          00060002
+DROP VAR1                                                               00070002
+SAY "VAR1 DESPUES DEL DROP:" VAR1                                       00080002
+ENTERO="ROBERTO RAUL FORTE"                                             00090002
+PARSE VAR ENTERO NOMBRE1 NOMBRE2 APELLIDO                               00100002
+SAY "NOMBRE 1 : "NOMBRE1                                                00110002
+SAY "NOMBRE 2 : "NOMBRE2                                                00120002
+SAY "APELLIDO : "APELLIDO                                               00130002
+
