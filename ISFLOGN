@@ -1,0 +1,38 @@
+/* REXX */                                                              00010000
+/*CLRSCN*/                                                              00020001
+SAY;SAY;SAY;SAY;SAY                                                     00030001
+RC=ISFCALLS('ON')                                                       00040001
+ISFSYSID="S0W1"                                                         00050001
+/* PARA BUSCAR EN EL SYSLOG DE LAS ULTIMAS 24 HORAS */                  00060001
+AYER=DATE("C")                                                          00070001
+AYER=AYER-1                                                             00080001
+ISFLOGSTARTDATE=DATE("U",AYER,"C")                                      00090001
+ISFLOGSTARTTIME=TIME("N")                                               00100001
+ISFLOGSTOPDATE=DATE("U")                                                00110001
+ISFLOGSTOPTIME=TIME("N")                                                00120001
+ISFFIND = 'IPLINFO'                                                     00130003
+ISFSCROLLTYPE = 'IPLINFO'                                               00140005
+ISFLINELIM = 1                                                          00150005
+U = 0                                                                   00160001
+INICIO = TIME(E)                                                        00170001
+DO UNTIL ISFNEXTLINETOKEN=''                                            00180001
+   ADDRESS SDSF "ISFLOG READ TYPE(SYSLOG)"                              00190001
+   IF ISFLINE.0 <> 0 THEN DO                                            00200001
+    U = U + 1                                                           00210001
+    SAY "COINCIDENCIA" U                                                00220001
+   END                                                                  00230001
+   DO I=1 TO ISFLINE.0                                                  00240001
+     DATETIME = SUBSTR(ISFLINE.I,20,17)                                 00250001
+     MSGTEXT = SUBSTR(ISFLINE.I,57,63)                                  00260001
+     SAY DATETIME MSGTEXT                                               00270001
+   END                                                                  00280001
+ /*********************************************/                        00282001
+ /* INDICA QUE CONTINUE LEYENDO DONDE NOS HEMOS QUEDADO */              00283001
+ /*********************************************/                        00284001
+  ISFSTARTLINETOKEN = ISFNEXTLINETOKEN                                  00285001
+ END                                                                    00286001
+ SAY "COINCIDENCIAS ENCONTRADAS:" U                                     00287001
+ SAY "SEGUNDOS QUE HA TARDADO:" TIME(E)                                 00288001
+ RC=ISFCALLS("OFF")                                                     00289001
+ EXIT                                                                   00289101
+

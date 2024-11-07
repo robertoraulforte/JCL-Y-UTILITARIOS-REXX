@@ -1,0 +1,12 @@
+/* REXX */                                                              00010000
+FILE = "FILE8"                                                          00020000
+DO I=1 TO 10                                                            00040000
+ IF I//2<>0 THEN FICH1.I = I ES IMPAR                                   00050001
+ ELSE FICH1.I = I ES PAR                                                00060000
+END                                                                     00070000
+SAY FICH1.0                                                             00080000
+"ALLOC F(OUTDD) DA("FILE") MOD REUSE"                                   00090000
+"EXCIO * DISKW OUTDD (FINIS STEM FICH1."                                00100000
+"FREE F(OUTDD)"                                                         00110000
+EXIT                                                                    00120000
+

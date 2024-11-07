@@ -1,0 +1,20 @@
+/* REXX */                                                              00010000
+/*CLRSCN*/                                                              00010101
+SAY                                                                     00010201
+SAY                                                                     00010301
+SAY                                                                     00010401
+SAY                                                                     00010501
+ ISFRC = ISFCALLS( "ON" )                                               00010601
+ISFPREFIX = "A*"                                                        00010701
+ISFCOLS = "JNAME TRANACT SYSNAME OWNERID"                               00010801
+ISFOWNER = "*"                                                          00010901
+ISFSYSNAME = "S0W1"                                                     00011001
+ADDRESS SDSF "ISFEXEC DA"                                               00011101
+IF RC <> 0 THEN EXIT                                                    00011201
+SAY "FILAS ECONTRADAS:" ISFROWS                                         00011301
+DO I=1 TO ISFROWS                                                       00011401
+ SAY "NOMBRE DEL JOB ES:" JNAME.I". TIEMPO TRANSCURRIDO:" TRANACT.I"."  00011501
+END                                                                     00011601
+CALL ISFCALLS "OFF"                                                     00011701
+EXIT                                                                    00011801
+

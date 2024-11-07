@@ -1,0 +1,12 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+SAY "HOLA"                                                              00010200
+NUM1= 5                                                                 00011000
+NUM2= 7                                                                 00011100
+VALOR = SUMAR()                                                         00011201
+SAY "EL RESULTADO ES:" VALOR                                            00011301
+EXIT                                                                    00011400
+SUMAR:                                                                  00011501
+  SUMA = NUM1 + NUM2                                                    00011601
+RETURN SUMA                                                             00012001
+

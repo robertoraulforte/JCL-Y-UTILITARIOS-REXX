@@ -1,0 +1,9 @@
+/* REXX */                                                              00010000
+CLAVE = 1234                                                            00020000
+DO FOREVER                                                              00030000
+ SAY "INTRODUCE LA CONTRASEÑA"                                          00040000
+ PULL PASSWORD                                                          00050000
+ IF PASSWORD = CLAVE THEN LEAVE                                         00060000
+END                                                                     00070000
+SAY "BIENVENIDO"                                                        00080000
+

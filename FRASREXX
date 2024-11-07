@@ -1,0 +1,25 @@
+/* REXX */                                                              00010000
+/* PROGRAMA EN REXX PARA ENCONTRAR LA PALABRA/PALABRAS MAS LARGAS*/     00010101
+FRASE=''                                                                00010201
+DO WHILE FRASE ==''                                                     00010301
+  SAY 'POR FAVOR, INGRESA UNA FRASE:'                                   00010401
+  PULL FRASE                                                            00010501
+END                                                                     00010601
+PALABRAS = WORDS(FRASE)                                                 00010701
+MAX_LONGITUD = 0                                                        00010801
+PALABRAS_MAS_LARGAS = ''                                                00010901
+DO I = 1 TO PALABRAS                                                    00011001
+ PALABRA_ACTUAL = WORD(FRASE, I)                                        00011101
+ LONGITUD_ACTUAL = LENGTH(PALABRA_ACTUAL)                               00011201
+ IF LONGITUD_ACTUAL > MAX_LONGITUD THEN DO                              00011301
+  MAX_LONGITUD = LONGITUD_ACTUAL                                        00011401
+  PALABRAS_MAS_LARGAS = PALABRA_ACTUAL                                  00011501
+ END                                                                    00011601
+ ELSE IF LONGITUD_ACTUAL == MAX_LONGITUD THEN DO                        00011701
+  PALABRAS_MAS_LARGAS = PALABRAS_MAS_LARGAS || ', ' || PALABRA_ACTUAL   00011801
+  END                                                                   00011901
+END                                                                     00012001
+SAY 'LA PALABRA/PALABRAS MAS LARGAS EN FRASE SON:' PALABRAS_MAS_LARGAS  00012101
+SAY 'TIENE(N)' MAX_LONGITUD 'CARACTER(ES).'                             00012201
+EXIT                                                                    00013001
+
