@@ -1,0 +1,19 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*ABBREV(ORIGINAL,CADENA,L).*/                                          00010201
+SAY ABBREV("INVIERNO","INV")      /* ->  "1"*/                          00010301
+SAY ABBREV("PRIMAVERA","PRI",4)   /* ->  "0"*/                          00010401
+SAY ABBREV("SI ","S")             /* ->  "1"*/                          00010501
+SAY ABBREV("VERANO","")           /* ->  "1"*/                          00010601
+/*SPACE(CADENA,N,RELLENO).*/                                            00010701
+SAY SPACE("   LA CASA ROJA ")     /*-> "LA CASA ROJA"*/                 00010801
+SAY SPACE("LA CASA ROJA ",2,"-")  /*-> "LA--CASA--ROJA"*/               00010901
+SAY SPACE("LA CASA ROJA ",0,"-")  /*-> "LACASAROJA"*/                   00011001
+/*TRANSLATE(CADENA,NUEVOS,ORIGINALES,RELLENO)*/                         00011101
+SAY TRANSLATE("ABCDEFG") /*-> "ABCDEFG" */                              00011201
+SAY TRANSLATE("ABCDEFG", "ABCDEFGHIJKLMNñOPQRSTUVWXYZ","ABCDEFGH")      00011301
+SAY TRANSLATE("ABCDEFG",XRANGE("A","Z"),XRANGE("A","Z"))                00011401
+SAY TRANSLATE("ABECIDOFUG","12345","AEIOU")   /*->"1B2C3D"*/            00011501
+SAY TRANSLATE("ABCDEFGHIJKL","1234","FBICJAE","-") /*->"-24D-1*/        00011601
+SAY TRANSLATE("ABCDEFGHIJKL","1234","FBICJAE") /*-> " 24D 1GH3 KL"*/    00012001
+
