@@ -1,0 +1,38 @@
+/* REXX */                                                              00010000
+/* PROGRAMA EN REXX PARA COPIAR REGISTROS DE UN ARCHIVO */              00010101
+PARSE ARG ARCHIVO_ENTRADA ARCHIVO_SALIDA                                00010401
+/* VERIFICAR SI ARCHIVO ENTRADA EXISTE Y TIENE CONTENIDO */             00010901
+IF ARCHIVO_ENTRADA='' THEN                                              00011501
+  DO                                                                    00011601
+    SAY 'POR FAVOR, INTRODUCE UN NOMBRE DE ARCHIVO DE ENTRADA:'         00011701
+    PULL ARCHIVO_ENTRADA                                                00011801
+  END                                                                   00013001
+IF FILE(ARCHIVO_ENTRADA) = '' THEN                                      00014001
+  DO                                                                    00015001
+    SAY 'ARCHIVO ENTRADA NO EXISTE O VACÌO. INTÈNTALO DE NUEVO'         00018001
+    EXIT                                                                00019001
+  END                                                                   00030001
+/* VERIFICAR SI EL ARCHIVO DE SALIDA EXISTE */                          00050001
+IF ARCHIVO_SALIDA = '' THEN                                             00060001
+  DO                                                                    00070001
+  SAY 'POR FAVOR, INTRODUCE UN NOMBRE DE ARCHIVO DE SALIDA:'            00080001
+  PULL ARCHIVO_SALIDA                                                   00100001
+    END                                                                 00110001
+IF FILE(ARCHIVO_SALIDA) <> '' THEN                                      00130001
+  SAY 'EL ARCHIVO SALIDA EXISTE. SE BORRAR· Y CREAR· DE NUEVO.'         00140001
+  /* BORRAR EL ARCHIVO DE SALIDA */                                     00210001
+ADDRESS SYSTEM 'RM' ARCHIVO_SALIDA                                      00220001
+  /* LEER EL ARCHIVO DE ENTRADA Y COPIAR REGISTROS */                   00240001
+REGISTROS_COPIADOS = 0                                                  00250001
+ DO WHILE LINES(ARCHIVO_ENTRADA) > 0                                    00260001
+   DO                                                                   00270001
+     PULL REGISTRO                                                      00280001
+      IF REGISTRO = '' THEN LEAVE /* SALIR SI NO INTRODUCE NADA*/       00290001
+      IF POS('CADENA_BUSCADA', REGISTRO) > 0 THEN                       00310001
+        DO                                                              00320001
+          /* COPIAR EL REGISTRO SI CONTIENE LA CADENA BUSCADA */        00330001
+         ADDRESS SYSTEM 'ECHO' REGISTRO '>' ARCHIVO_SALIDA              00340001
+         REGISTROS_COPIADOS = REGISTROS_COPIADOS + 1                    00350001
+         END                                                            00360001
+   END                                                                  00370001
+

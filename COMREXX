@@ -1,0 +1,16 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*COMPARE(CADENA1,CADENA2,RELLENO). */                                  00010301
+SAY COMPARE("XYZ","XYZ")        /*->"0", "XYZ" = "XYZ". */              00010401
+SAY COMPARE("XYZ ","XYZ")       /*->"0", "XYZ " = "XYZ "*/              00010501
+SAY COMPARE("XYZ ","XYZ","-")   /*->"4", "XYZ " <> "XYZ-"*/             00010601
+SAY COMPARE("XY","XYZ")         /*->"3", "XY " <> "XYZ".*/              00010701
+/*VERIFY(CADENA,REFERENCIA,OPCIóN,N)*/                                  00010901
+SAY VERIFY("IUAIOEAAUO","AEIOU")       /*->      "0"*/                  00011001
+SAY VERIFY("IUJEASOGY","AEIOU",M,5)    /*->      "5"*/                  00011101
+SAY VERIFY("IUJEASOGY","AEIOU")        /*->      "3"*/                  00011201
+SAY VERIFY("IUJEASOGY","AEIOU",N,4)    /*->      "6"*/                  00011301
+SAY VERIFY("IUJEASOGY","AEIOU",,7)     /*->      "8"*/                  00011401
+SAY VERIFY("IUJEASOGY","AEIOU",M)      /*->      "1"*/                  00011501
+SAY VERIFY("IUJEASOGY",XRANGE("A","Z")) /*->     "0"*/                  00011601
+

@@ -1,0 +1,13 @@
+/* REXX */                                                              00010000
+ENTRADA="FILE1"                                                         00010101
+SALIDA="FILECO"                                                         00010201
+CONTADOR = 0                                                            00010301
+"ALLOC F(INDD) DA("ENTRADA") SHR REUSE"                                 00010401
+"EXECIO * DISKR INDD (FINIS STEM REG."                                  00010501
+"FREE F(INDD)"                                                          00010601
+SAY ENTRADA "SE VA A COPIAR EN" SALIDA                                  00010701
+"ALLOC F(OUTDD) DA("SALIDA") MOD REUSE"                                 00010801
+"EXECIO * DISKW OUTDD (FINIS STEM REG."                                 00010901
+"FREE F(OUTDD)"                                                         00011001
+EXIT                                                                    00011101
+
