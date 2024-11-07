@@ -1,0 +1,14 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/* LENGTH(STRING).*/                                                    00010201
+SAY LENGTH("CASA")                    /* ->    "4"*/                    00010301
+SAY LENGTH("CALLE FALSA, 123")        /* ->   "16"*/                    00010401
+/*POS(CADENA,ORIGINAL,N)*/                                              00010501
+SAY POS("CASA","ESTA ES MI CASA")     /* ->   "12"*/                    00010601
+SAY POS("Z","ESTA ES MI CASA")        /* ->    "0" */                   00010701
+SAY POS("A","ESTA ES MI CASA",6)    /* ->   "13" */                     00010801
+/*LASTPOS(CADENA,ORIGINAL,N) */                                         00010901
+SAY LASTPOS("CASA","ESTA CASA ES MI CASA")     /*->  "17"*/             00011101
+SAY LASTPOS("Z","ESTA CASA ES MI CASA")        /*->   "0"*/             00011201
+SAY LASTPOS("CASA","ESTA CASA ES MI CASA",17)  /*->   "6"*/             00012001
+

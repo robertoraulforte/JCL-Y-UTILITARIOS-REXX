@@ -1,0 +1,16 @@
+/* REXX */                                                              00010000
+CONTADOR = 0                                                            00020001
+DO FOREVER                                                              00030001
+ SAY "INTROCUDE 0 PARA TEMINAR EL PROGRAMA."                            00031001
+ SAY "INTROCUDE 1 PARA TEMINAR EL BUCLE."                               00040001
+ SAY "INTROCUDE 2 PARA SALTAR AL SIGUIENTE REGISTRO."                   00050001
+ SAY "INTROCUDE OTRA COSA O PRESIONA INTRO PARA AÒADIR A CONTADOR."     00060001
+ PULL OPCION                                                            00070001
+ IF OPCION = 0 THEN EXIT                                                00080001
+ IF OPCION = 1 THEN LEAVE                                               00090001
+ IF OPCION = 2 THEN ITERATE                                             00100001
+ CONTADOR = CONTADOR + 1                                                00110001
+ SAY "CONTADOR AHORA VALE:" CONTADOR                                    00120001
+END                                                                     00130001
+SAY "REGISTROS AÒADIDOS:" CONTADOR                                      00140001
+

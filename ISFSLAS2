@@ -1,0 +1,19 @@
+/* REXX */                                                              00010000
+/*CLRSCN*/                                                              00010101
+SAY                                                                     00010201
+SAY                                                                     00010301
+SAY                                                                     00010401
+SAY                                                                     00010501
+RC=ISFCALLS('ON')                                                       00010601
+CMD.0 = 3                                                               00010701
+CMD.1 = 'D IPLINFO'                                                     00010801
+CMD.2 = 'D R,L'                                                         00010901
+CMD.3 = 'D A'                                                           00011001
+ADDRESS SDSF "ISFSLASH (CMD.) (WAIT)"                                   00011101
+SAY ISFULOG.0 "LINEAS CAPTURADAS"                                       00011200
+DO I=1 TO ISFULOG.0                                                     00011300
+ SAY "LINEA" I":" ISFULOG.I                                             00011400
+END                                                                     00011500
+RC=ISFCALLS('OFF')                                                      00011600
+EXIT                                                                    00012000
+

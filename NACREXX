@@ -1,0 +1,25 @@
+/* REXX */                                                              00010000
+SAY 'POR FAVOR, INTRODUCE TU FECHA DE NACIMIENTO (YYYYMMDD):'           00010401
+PULL FECHANAC                                                           00010701
+DO WHILE LENGTH(FECHANAC) \= 8 | ,                                      00010901
+  DATATYPE(FECHANAC) \= 'NUM' | ,                                       00011301
+  SUBSTR(FECHANAC,5,2) > 12 | ,                                         00011501
+  SUBSTR(FECHANAC,7,2) > 31                                             00011601
+  SAY 'FECHA INV·LIDA. INTRODUCE TU FECHA DE NACIMIENTO (YYYYMMDD):'    00011801
+  PULL FECHANAC                                                         00011901
+END                                                                     00012001
+FECHAACTUAL = DATE('S')                                                 00017001
+ANIOACTUAL = SUBSTR(FECHAACTUAL,1,4)                                    00018001
+MESACTUAL = SUBSTR(FECHAACTUAL,5,2)                                     00020001
+DIAACTUAL = SUBSTR(FECHAACTUAL,7,2)                                     00030001
+ANIONAC = SUBSTR(FECHANAC,1,4)                                          00050001
+MESNAC = SUBSTR(FECHANAC,5,2)                                           00100001
+DIANAC = SUBSTR(FECHANAC,7,2)                                           00110001
+EDAD = ANIOACTUAL - ANIONAC                                             00120001
+IF MESACTUAL<MESNAC|(MESACTUAL=MESNAC&DIAACTUAL<DIANAC)                 00130001
+   THEN EDAD=EDAD-1                                                     00131001
+NOMBREUSUARIO = USERID() /* OBTIENE EL NOMBRE DE USUARIO */             00220001
+SAY 'TU NOMBRE DE USUARIO ES:' NOMBREUSUARIO                            00230001
+SAY 'Y TIENES' EDAD 'AÒOS.'                                             00240001
+EXIT    ELSE GANADOR = "EL USUARIO."                                    00260001
+

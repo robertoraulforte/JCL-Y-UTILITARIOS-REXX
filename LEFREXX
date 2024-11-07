@@ -1,0 +1,14 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*LEFT(CADENA,L,RELLENO)*/                                              00010201
+SAY LEFT("ELEFANTE",10)        /*->  "ELEFANTE  "*/                     00010301
+SAY LEFT("ELEFANTE",10,"-")    /*->  "ELEFANTE--"*/                     00010401
+SAY LEFT("ELEFANTE",5)        /*->   "ELEFA"*/                          00010501
+/*RIGHT(CADENA,L,RELLENO)*/                                             00010701
+SAY RIGHT("ELEFANTE",10)       /*->  "  ELEFANTE"*/                     00010801
+SAY RIGHT("ELEFANTE",10,"-")   /*->  "--ELEFANTE"*/                     00010901
+SAY RIGHT("ELEFANTE",5)        /*->     "FANTE"*/                       00011001
+SAY RIGHT("ELEFANTE",10)       /*-> "  ELEFANTE"*/                      00011101
+SAY RIGHT("ELEFANTE",10,"-")   /*->  "--ELEFANTE"*/                     00011201
+SAY RIGHT("ELEFANTE",5)        /*->     "FANTE"*/                       00011301
+

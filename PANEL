@@ -1,0 +1,21 @@
+/* REXX */                                                              00010000
+)ATTR                                                                   00010103
+?  TYPE(TEXT) INTENS(HIGH) JUST(LEFT) COLOR(BLUE) HILITE(REVERSE)       00010201
+(  TYPE(TEXT) INTENS(HIGH) COLOR(RED)                                   00010301
+#  TYPE(TEXT) INTENS(HIGH) COLOR(YELLOW)                                00010401
+/  TYPE(INPUT) PAD('_') CAPS(ON)                                        00010501
+)BODY                                                                   00010601
+% (PROGRAMA A EJECUTAR                                                  00010701
+% ----------------------------------------------------------------      00010801
+% # 1. LEER.                                                            00010901
+%                                                                       00011001
+% # 2. OUTTRAP.                                                         00011101
+%                                                                       00011201
+% # 3. PROG8.                                                           00011301
+%                                                                       00011401
+%     %?"ENTER REPORT NUMBER"%/Z%                                       00011501
+%                                                                       00011601
+)INIT                                                                   00011701
+ .ZVARS = '(OPCION)'                                                    00011801
+)END                                                                    00011901
+

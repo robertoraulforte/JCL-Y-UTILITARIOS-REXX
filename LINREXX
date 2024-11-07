@@ -1,0 +1,14 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*LINEIN(ARCHIVO,N).*/                                                  00010201
+SAY LINEIN(FILE1.TXT)   /* LEE LÌNEA 1 PARA LEER LA LINEA 2 SIG*/       00010301
+SAY LINEIN(FILE1.TXT,12)  /* LEE LÌNEA 12 PARA LEER LINEA 13 LA SIG*/   00010401
+/*RC = LINEIN(ARCHIVO,1,0)  PARA VOLVER A LEER LA PRIMERA LINEA*/       00010501
+/*LINEOUT(ARCHIVO,LÌNEA)..*/                                            00010701
+/*RC = LINEOUT(FILE1.TXT,"TEXTO A GRABAR")                              00010801
+GRABA "TEXTO A GRABAR" AL FINAL DE FILE1.TXT                            00010901
+RC = LINEOUT(FILE1.TXT)                                                 00011001
+CIERRA FILE1.TXT O LO CIERRA SI EXISTIERA                               00011101
+/*LINES(ARCHIVO,C).*/                                                   00011201
+RC = LINEIN(ARCHIVO,1,0) */                                             00011301
+

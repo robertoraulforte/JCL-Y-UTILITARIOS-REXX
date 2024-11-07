@@ -1,0 +1,24 @@
+/* REXX */                                                              00010000
+/*CLRSCN*/                                                              00010110
+SAY                                                                     00010210
+SAY                                                                     00010310
+SAY                                                                     00010410
+SAY                                                                     00010510
+FICHERO = "CURSO"                                                       00010609
+X = OUTTRAP("LINE.")                                                    00010701
+"LISTDS" FICHERO                                                        00010808
+X = OUTTRAP(OFF)                                                        00010902
+/*DO I=1 TO LINE.0                                                      00011009
+ SAY LINE.I                                                             00012001
+END*/                                                                   00013009
+"ISPEXEC LIBDEF ISPPLIB DATASET ID('Z56575.CURSO')"                     00013109
+"ISPEXEC TBCREATE TABLE NAMES(TABLE1) REPLACE NOWRITE"                  00013209
+"ISPEXEC TBVCLEAR TABLE1"                                               00013309
+DO I=1 TO LINE.0                                                        00013409
+    TABLE = LINE.I                                                      00013509
+    "ISPEXEC TBADD TABLE1"                                              00013609
+END                                                                     00013709
+"ISPEXEC TBTOP TABLE1"                                                  00013809
+"ISPEXEC TBDISPL TABLE1 PANEL(PANELSAL)"                                00013909
+EXIT                                                                    00015007
+

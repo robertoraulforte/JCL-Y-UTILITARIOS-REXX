@@ -1,0 +1,15 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/* OVERLAY(NUEVA,CADENA,N,L,RELLENO)*/                                  00010201
+SAY OVERLAY("ROJO","LECHUGA")         /*->      "ROJOUGA"*/             00010302
+SAY OVERLAY("ROJO","LECHUGA",4)       /*->      "LECROJO"*/             00010402
+SAY OVERLAY("ROJO","LECHUGA",3,7,"-") /*->      "LEROJO---"*/           00010502
+SAY OVERLAY("ROJO","LECHUGA",,2)      /*->      "ROCHUGA"*/             00010602
+/* REVERSE(CADENA)*/                                                    00010701
+SAY REVERSE("CASA")            /*->      "ASAC"/  */                    00010802
+SAY REVERSE("123456789")       /*->      "987654321"*/                  00010902
+/*SUBSTR(CADENA,N,L,RELLENO).*/                                         00011001
+SAY SUBSTR("ABCDEFGHIJKLM",5)       /*->      "EFGHIJKLM"*/             00011102
+SAY SUBSTR("ABCDEFGHIJKLM",5,3)     /*->      "EFG" */                  00011202
+SAY SUBSTR("ABCDEFGHIJKLM",9,6,"-") /*->      "IJKLM-" */               00012002
+
