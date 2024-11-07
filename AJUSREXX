@@ -1,0 +1,24 @@
+/* REXX */                                                              00010000
+/* PROGRAMA REXX PARA AJUSTAR REGISTROS */                              00010101
+REG.1 = "JOSE 56615 LITERATURA OPEL"                                    00010201
+REG.2 = "CLARISA 12412 HISTORIA BMW"                                    00010301
+REG.3 = "MARÌA 1552 M˙SICA TOYOTA"                                      00010401
+REG.4 = "RODRIGO 1515 FILOSOFÌA MAZDA"                                  00010501
+REG.5 = "ANA 43442 TECNOLOGÌA PEUGEOT"                                  00010601
+REG.0 = 5 /* LONGITUD DE NUESTRA STEM */                                00010701
+/* AJUSTAR LOS CAMPOS DE CADA REGISTRO */                               00010901
+DO I = 1 TO REG.0                                                       00011001
+  PARSE VAR REG.I NOMBRE CODIGO ASIGNATURA COCHE                        00011101
+  NOMBRE = LEFT(NOMBRE, 10)                                             00011201
+  CODIGO = RIGHT(CODIGO, 7)                                             00011301
+  ASIGNATURA = RIGHT(ASIGNATURA, 15)                                    00011401
+  COCHE = CENTER(COCHE, 10, "-")                                        00011501
+  REG.I = NOMBRE || CODIGO || ASIGNATURA || COCHE                       00011601
+END                                                                     00011701
+/* MOSTRAR LOS REGISTROS AJUSTADOS */                                   00011801
+SAY "REGISTROS AJUSTADOS:"                                              00011901
+DO I = 1 TO REG.0                                                       00012001
+  SAY REG.I                                                             00013001
+END                                                                     00014001
+SAY "TOTAL DE REGISTROS AJUSTADOS:" REG.0                               00015001
+

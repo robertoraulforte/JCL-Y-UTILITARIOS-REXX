@@ -1,0 +1,26 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*ARGUMENTOS*/                                                          00010201
+/*ARG(N,OPCIóN).*/                                                      00010301
+/*NUM1 = 4                                                              00010401
+NUM2 =  2                                                               00010501
+CALL PROC1 NUM1,NUM2                                                    00010601
+EXIT                                                                    00010701
+PROC1: PROCEDURE                                                        00010801
+ARG VAR1,VAR2,VAR3                                                      00010901
+SAY ARG()                    /* "1" */                                  00011001
+SAY ARG(1)                   /* "4" */                                  00011101
+SAY ARG(1,E)                 /* "1" */                                  00011201
+SAY ARG(2,O)                 /* "0" */                                  00011301
+SAY ARG(3,O)                 /* "1" */                                  00011401
+SAY ARG(3,E)                 /* "0" */                                  00011501
+SAY ARG(4,E)                 /* "0" */                                  00011601
+RETURN*/                                                                00012001
+/*DATATYPE(CADENA,TIPO)*/                                               00013001
+SAY DATATYPE("4945")         /*>->      "NUM"*/                         00014001
+SAY DATATYPE("49.5A")        /* ->      "CHAR"*/                        00015001
+/*XRANGE(INICIO,FINAL) */                                               00016001
+SAY XRANGE("A","Z")     /*->     "ABCDEFG...UVWXYZ"*/                   00017001
+SAY XRANGE("A","Z")     /*->     "ABCDEFG...UVWXYZ"*/                   00018001
+SAY XRANGE(0,9)         /*->     "0123456789"*/                         00019001
+

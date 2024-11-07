@@ -1,0 +1,14 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010101
+INICIO :                                                                00010201
+SAY "INTRODUCE TU NOMBRE"                                               00011001
+PULL NAME                                                               00011101
+IF NAME ="" THEN CALL INICIO                                            00011201
+SAY "BIENVENIDO" NAME                                                   00011301
+CALL SUBRUTINA                                                          00011401
+SAY "YA HEMOS VUELTO Y TERMINADO"                                       00011501
+EXIT                                                                    00011601
+SUBRUTINA :                                                             00012001
+SAY "ESTAMOS DENTRO DE LA SUBRUTINA"                                    00020001
+RETURN                                                                  00030001
+
