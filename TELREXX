@@ -1,0 +1,20 @@
+/* REXX */                                                              00010000
+N=0                                                                     00010301
+DO FOREVER                                                              00010401
+ SAY "INTRODUCE UN N˙MERO DE TELÈFONO CON 9 DÕGITOS."                   00010501
+ SAY "PARA SALIR, NO INTRODUZCA NADA Y PULSE ENTER."                    00010601
+ PULL TEL                                                               00010701
+ IF TEL = "" THEN LEAVE                                                 00010901
+ IF DATATYPE(TEL,'N') = 0 | LENGTH(TEL) <> 9 THEN DO                    00011001
+  SAY "INTRODUCE UN N˙MERO DE TELEFONO CORRECTO."                       00011101
+  SAY                                                                   00011201
+  ITERATE                                                               00011301
+END                                                                     00011401
+N=N+1                                                                   00011501
+IF SUBSTR(TEL,1,1) = 9 THEN SAY TEL "ES UN TELÈFONO FIJO."              00011601
+ELSE SAY TEL "ES UN TELÈFONO MÛVIL."                                    00011801
+SAY                                                                     00011901
+END                                                                     00012001
+SAY;SAY N "TELEFÛNOS GRABADOS."                                         00013001
+EXIT                                                                    00014001
+

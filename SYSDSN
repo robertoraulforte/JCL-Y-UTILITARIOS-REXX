@@ -1,0 +1,4 @@
+/* REXX */                                                              00010000
+FILE = "SYSDSN"                                                         00011006
+SAY SYSDSN(FILE)                                                        00012002
+

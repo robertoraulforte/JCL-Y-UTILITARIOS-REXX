@@ -1,0 +1,21 @@
+/* REXX */                                                              00010000
+NUMERIC DIGITS 9                                                        00010301
+TOTAL_VALIDOS = 0                                                       00010401
+DO FOREVER                                                              00010501
+ SAY "INTRODUCE UN N˙MERO DE TELÈFONO DE 9 DÌGITOS(O 'FIN' PARA SALIR)" 00010601
+ PARSE PULL TELEFONO                                                    00010701
+IF TELEFONO = "FIN" THEN                                                00010901
+    LEAVE                                                               00011001
+ IF LENGTH(TELEFONO) <> 9 THEN DO                                       00011101
+    SAY "N˙MERO INCORRECTO.DEBE TENER 9 DÌGITOS.INTRODUCE OTRO N˙MERO"  00011201
+    ITERATE                                                             00011301
+  END                                                                   00011401
+ IF SUBSTR(TELEFONO, 1, 1) = "9" THEN                                   00011501
+    SAY "TELÈFONO FIJO INGRESADO."                                      00011601
+  ELSE                                                                  00011801
+    SAY "TELÈFONO MÛVIL INGRESADO."                                     00011901
+  TOTAL_VALIDOS = TOTAL_VALIDOS + 1                                     00012001
+END                                                                     00013001
+SAY "TOTAL DE N˙MEROS V·LIDOS INGRESADOS: " TOTAL_VALIDOS               00013101
+EXIT                                                                    00014000
+

@@ -1,0 +1,21 @@
+/* REXX */                                                              00010000
+/*CLRSCN*/                                                              00010100
+SAY                                                                     00010200
+SAY                                                                     00010300
+SAY                                                                     00010400
+SAY                                                                     00010500
+ ISFRC = ISFCALLS( "ON" )                                               00010600
+ISFPREFIX = "*"                                                         00010703
+ISFCOLS = "JNAME TRANACT SYSNAME OWNERID"                               00010802
+ISFOWNER = "*"                                                          00010900
+ISFSYSNAME = "S0W1"                                                     00011000
+ISFSORT = "OWNERID A"                                                   00011101
+ADDRESS SDSF "ISFEXEC DA (COMPACT)"                                     00011201
+IF RC <> 0 THEN EXIT                                                    00011300
+SAY "FILAS ENCONTRADAS:" SDSFROW.0                                      00011401
+DO I=1 TO SDSFROW.0                                                     00011501
+  SAY "FILA " I":" SDSFROW.I                                            00011601
+END                                                                     00011700
+CALL ISFCALLS "OFF"                                                     00011800
+EXIT                                                                    00011900
+

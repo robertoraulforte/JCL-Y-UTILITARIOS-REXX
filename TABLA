@@ -1,0 +1,19 @@
+/* REXX */                                                              00010001
+FILE = "FILE1"                                                          00010101
+"ALLOC F(INDD) DA("FILE") SHR REUSE"                                    00010201
+"EXECIO * DISKR INDD (FINIS STEM FICH1."                                00010301
+"FREE F(INDD)"                                                          00010401
+/*DO I=1 TO FICH1.0                                                     00010501
+ SAY FICH1.I                                                            00010601
+END*/                                                                   00010701
+"ISPEXEC LIBDEF ISPPLIB DATASET ID('Z56575.CURSO')"                     00010901
+"ISPEXEC TBCREATE TABLE1 NAMES(TABLE1) REPLACE NOWRITE"                 00011001
+"ISPEXEC TBVCLEAR TABLE1"                                               00011101
+DO I = 1 TO REG.0                                                       00011201
+     TABLE1 = REG.I                                                     00011301
+     "ISPEXEC TBADD TABLE1"                                             00011401
+END                                                                     00011501
+"ISPEXEC TBTOP TABLE1"                                                  00011601
+"ISPEXEC TBDISPL TABLE1 PANEL(PANELSAL)"                                00011701
+EXIT                                                                    00011801
+

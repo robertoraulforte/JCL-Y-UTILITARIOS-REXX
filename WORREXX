@@ -1,0 +1,16 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*WORDS(CADENA)*/                                                       00010201
+SAY WORDS("LA CASA ES ROJA")  /* ->  "4"*/                              00010301
+SAY WORDS("EL 1 Y EL 2")      /* ->  "5"*/                              00010401
+SAY WORDS(54 67 32 98 12 32)  /* ->  "6"*/                              00010501
+/*WORD(CADENA,N).*/                                                     00010701
+SAY WORD("LA CASA ES ROJA",3)  /* ->  "ES"*/                            00010801
+SAY WORD("EL 1 Y EL 2",4)      /* ->  "EL"*/                            00010901
+SAY WORD(54 67 32 98 12 32,2)  /* ->  "67"*/                            00011001
+/*WORDPOS(CADENA,FRASE,N).*/                                            00011101
+SAY WORDPOS("ES ROJA","LA CASA ES ROJA")   /*->  "3"*/                  00011201
+SAY WORDPOS("ES ROJA","LA CASA ES ROJA",3) /*->  "3"*/                  00011301
+SAY WORDPOS("ES ROJA","LA CASA ES ROJA",4) /*->  "0"*/                  00011401
+SAY WORDPOS("ROJA","LA CASA ES ROJA")      /*->  "4"*/                  00011501
+

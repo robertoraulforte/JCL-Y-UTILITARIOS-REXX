@@ -1,0 +1,15 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+SAY "HOLA"                                                              00010201
+NUM1= 5                                                                 00011001
+NUM2= 7                                                                 00011101
+NAME = "ENRIQUE"                                                        00011201
+CALL SUMAR                                                              00011301
+SAY "EL RESULTADO ES:" TOTALSUMA                                        00011401
+EXIT                                                                    00011501
+SUMAR:                                                                  00011601
+    SAY "BIENVENIDO" NAME                                               00012001
+    SAY "VAMOS A SUMAR DOS CANTIDADES:" NUM1 "Y" NUM2"."                00020001
+    TOTALSUMA = NUM1 + NUM2                                             00030001
+RETURN                                                                  00040001
+

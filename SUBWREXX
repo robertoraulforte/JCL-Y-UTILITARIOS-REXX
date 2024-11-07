@@ -1,0 +1,12 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+/*SUBWORD(CADENA,N,L).*/                                                00010201
+SAY SUBWORD("NOMBRE APELLIDO TELEFONO TRABAJO",3) /*"TELEFONO TRABAJO"*/00010301
+SAY SUBWORD("NOMBRE APELLIDO TELEFONO TRABAJO",2,2)/*"APELLIDO TRABAJO*/00010401
+/*WORDINDEX(CADENA,N).*/                                                00010501
+SAY WORDINDEX("NOMBRE APELLIDO TELEFONO TRABAJO",3)  /*-> "17" */       00010701
+SAY WORDINDEX("NOMBRE APELLIDO TELEFONO TRABAJO",14) /*->  "0" */       00010801
+/*DELWORD(CADENA,N,L)..*/                                               00010901
+SAY DELWORD("NOMBRE APELLIDO TELEFONO TRABAJO",3) /*"NOMBRE APELLIDO"*/ 00011001
+SAY DELWORD("NOMBRE APELLIDO TELEFONO TRABAJO",3,1) /*"NOMBRE APE TRA*/ 00011101
+

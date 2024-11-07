@@ -1,0 +1,15 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010101
+/*COPIES(CADENA,N) */                                                   00010202
+SAY COPIES("CASA",3)  /* -> "CASACASACASA" */                           00010301
+SAY COPIES("-",10)    /*->  "----------" */                             00010401
+/*DELSTR(CADENA,N,L)*/                                                  00010502
+SAY DELSTR("HOLA PEDRO",5,3)  /* -> "HOLADRO"*/                         00010601
+SAY DELSTR("HOLA PEDRO",5)   /* ->  "HOLA" */                           00010701
+/*INSERT(NUEVA,CADENA,N,L,RELLENO). */                                  00010802
+SAY INSERT("NUEVO","VIEJO")   /*-> "NUEVOVIEJO" */                      00010901
+SAY INSERT("NUEVO","VIEJO",3)    /*->  "VIENUEVOJO" */                  00011001
+SAY INSERT("NUEVO","VIEJO",3,7,"-")  /*-> "VIENUEVO--JO" */             00011101
+SAY INSERT("NUEVO","VIEJO",7,7,"-")  /* -> "VIEJO--NUEVO--"*/           00011201
+SAY INSERT("NUEVO","VIEJO",,2)  /* -> "NUVIEJO" */                      00012001
+

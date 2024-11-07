@@ -1,0 +1,15 @@
+)ATTR                                                                   00010001
+  $ TYPE(OUTPUT) INTENS(HIGH) COLOR(YELLOW)                             00010101
+  @ TYPE(TEXT) INTENS(HIGH) COLOR(GREEN)                                00010401
+  ) TYPE(TEXT) INTENS(HIGH) COLOR(BLUE)                                 00010901
+)BODY                                                                   00011501
+%COMANDO ===>_CMDIN                           %SCROLL ===>_SCIN+        00011601
+% @ DATOS SOLICITADOS.                                                  00011701
+% )**************************************************************       00011801
+)MODEL                                                                  00013001
+$Z                                                                      00014001
+)INIT                                                                   00015001
+ &VARS = '(TABLE1)'                                                     00018001
+ &SCIN = CUR                                                            00019001
+)END                                                                    00030001
+
