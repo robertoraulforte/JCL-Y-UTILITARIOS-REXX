@@ -1,0 +1,30 @@
+/* REXX */                                                              00001001
+/* PROGRAMA EN REXX PARA COPIAR REGISTROS DE FILE1 A FILE2 */           00010001
+ADDRESS ISPEXEC "VGET (ZCMD) PROFILE"                                   00010201
+IF ZCMD = "SUBMIT" THEN EXIT                                            00011101
+/* DEFINICIóN DE VARIABLES */                                           00011301
+PARSE ARG CADENABUSCAR                                                  00011401
+FILE1 = "FILE1"                                                         00011501
+FILE2 = "FILE2"                                                         00012001
+CONTADORREGISTROS = 0                                                   00020001
+/* ABRIR FILE1 PARA LECTURA */                                          00040001
+IF OUTTRAP(FILE1REGISTROS) THENCIDO NO SE ENCUENTRA O ES INCORRECTO."   00050001
+  CALL EXECIO "DISKR " FILE1 "STEM FILE1REGISTROS.                      00060001
+/* ABRIR FILE2 PARA ESCRITURA (AñADIR AL FINAL SI EXISTE) */            00080001
+IF OUTTRAP(FILE2REGISTROS) THEN                                         00090001
+  CALL EXECIO "DISKW " FILE2 "STEM FILE2REGISTROS. APPEND"              00100001
+/* PROCESAR REGISTROS DE FILE1 */                                       00120001
+DO I = 1 TO FILE1REGISTROS.0                                            00130001
+  REGISTRO = FILE1REGISTROS.I                                           00140001
+  IF POS(CADENABUSCAR, REGISTRO) > 0 THEN DO                            00150001
+    CONTADORREGISTROS = CONTADORREGISTROS + 1                           00160001
+    FILE2REGISTROS.CONTADORREGISTROS = REGISTRO                         00170001
+  END                                                                   00180001
+END                                                                     00190001
+/* CERRAR FILE1 Y FILE2 */                                              00210001
+CALL EXECIO "DISKW " FILE2 "CLOSE"                                      00220001
+CALL EXECIO "DISKR " FILE1 "CLOSE"                                      00230001
+/* MOSTRAR MENSAJE CON EL NúMERO DE REGISTROS COPIADOS */               00240001
+SAY "SE HAN COPIADO" CONTADORREGISTROS "REGISTROS A" FILE2              00250001
+EXIT                                                                    00270001
+

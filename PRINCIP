@@ -1,0 +1,26 @@
+/* REXX */                                                              00010000
+/* REFRESH PANEL CACHE */                                               00010101
+?  DO RUN_I = 1 TO 10                                                   00010201
+     "ISPEXEC CONTROL NONDISPL END"                                     00010301
+     "ISPEXEC DISPLAY PANEL(ISR003"RIGHT(RUN_I,2,'0')")"                00010401
+/  END                                                                  00010501
+/*----------------------------------------------*/                      00010601
+"CLRSCN"                                                                00010701
+INICIO:                                                                 00010801
+"ISPEXEC LIBDEF ISPPLIB DATASET ID('Z56575.CURSO')"                     00010901
+OPCION = ""                                                             00011001
+"ISPEXEC DISPLAY PANEL(PANELENT)"                                       00011101
+OPCION = STRIP(OPCION)                                                  00011201
+SELECT                                                                  00011301
+ WHEN OPCION = "" THEN RETURN                                           00011401
+ WHEN OPCION = 1 THEN "EXEC 'Z56575.CURSO(LEER)'"                       00011501
+ WHEN OPCION = 2 THEN "EXEC 'Z56575.CURSO(OUTTRAP)'"                    00011601
+ WHEN OPCION = 3 THEN "EXEC 'Z56575.CURSO(PROG8)'"                      00011701
+ OTHERWISE DO                                                           00011801
+   SAY "SELECCIONA UNA OPCION VALIDA O PULSA F3 PARA SALIR."            00011901
+   CALL INICIO                                                          00012001
+  END                                                                   00012101
+ END                                                                    00012201
+ CALL INICIO                                                            00012301
+ EXIT                                                                   00012401
+

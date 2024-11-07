@@ -1,0 +1,28 @@
+/* REXX */                                                              00000101
+/* PROG10 - PROGRAMA REXX */                                            00001001
+/* LEER EL PANEL DE ENTRADA PANEL10 */                                  00010201
+ADDRESS ISPEXEC "LIBDEF ISPPLIB DATASET ID('TU.LIBRERIA.PANELES')"      00011101
+ADDRESS ISPEXEC "DISPLAY PANEL(PANEL10)"                                00011301
+/* OBTENER LA OPCIÛN INGRESADA POR EL USUARIO */                        00011501
+PARSE VAR &SYSUID OPCION                                                00012001
+/* VALIDAR LA OPCIÛN INGRESADA */                                       00040001
+IF OPCION \= '1' & OPCION \= '2' & OPCION \= '3' THEN DO INCORRECTO."   00050001
+    SAY "ELIGE UNA OPCIÛN V·LIDA (1, 2 O 3).                            00060001
+END                                                                     00090001
+/* LEER FILE1 Y BUSCAR REGISTROS CON LA CADENA CORRESPONDIENTE */       00120001
+ADDRESS TSO "SUBCOM DSNREXX 'EXECIO * DISKR FILE1 (STEM REGISTROS.      00130001
+            FINIS'"                                                     00131001
+DO I = 1 TO REGISTROS.0                                                 00140001
+/* ANALIZAR REGISTROS Y ALMACENAR EN UNA TABLA */                       00150001
+    /* (AQUÌ DEBES ADAPTAR EL CÛDIGO SEG˙N TUS NECESIDADES) */          00160001
+  END                                                                   00180000
+/* MOSTRAR LA TABLA UTILIZANDO EL PANEL PANELSAL */                     00190001
+ADDRESS ISPEXEC "DISPLAY PANEL(PANELSAL)"                               00210001
+/* VOLVER A MOSTRAR EL PANEL PRINCIPAL O SALIR */                       00230001
+DO FOREVER                                                              00240001
+    ADDRESS ISPEXEC "DISPLAY PANEL(PANEL10)"                            00250001
+    PARSE VAR &SYSUID OPCION                                            00270001
+    IF OPCION = 'F3' | OPCION = '' THEN LEAVE                           00280001
+END                                                                     00290001
+EXIT                                                                    00340001
+

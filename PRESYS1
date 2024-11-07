@@ -1,0 +1,34 @@
+/* REXX */                                                              00010001
+/*CLRSCN*/                                                              00020001
+SAY;SAY;SAY;SAY                                                         00030001
+ISFPREFIX = "SYSLOG*"                                                   00040001
+ISFFILTER = "QUEUE = EXECUTION"                                         00050001
+ISFOWNER = "*"                                                          00060001
+RC_ISF = ISFCALLS("ON")                                                 00070001
+N = 0                                                                   00080001
+INICIO = TIME(E)                                                        00090001
+ADDRESS SDSF "ISFEXEC ST"                                               00100001
+/* LOOP FOR ALL SYSLOG JOBS */                                          00110001
+DO NJOB = 1 TO JNAME.0                                                  00120001
+ /* ACTION TO ALLOCATE THE DATA SET IN THE JOB */                       00130001
+ ADDRESS SDSF "ISFACT ST TOKEN('"TOKEN.NJOB"') PARM(NP SA)"             00140001
+ /* READ THE RECODS OF EACH DATA SET OF THE JOB */                      00150001
+ DO LOOPDD=1 TO ISFDDNAME.0                                             00160001
+  "EXECIO * DISKR" ISFDDNAME.LOOPDD "(STEM LINE."                       00170001
+  /* CHECK EACH RECORD FROM THE TOP TO THE BOTTOM */                    00180001
+ DO I = 1 TO LINE.0                                                     00190001
+   IF POS("STARTED",LINE.I) > 0 THEN DO                                 00200003
+     DATETIME = SUBSTR(LINE.I,20,17)                                    00210001
+     MSGTEXT = SUBSTR(LINE.I,57,63)                                     00220001
+     N = N + 1                                                          00230001
+     /*SAY DATETIME MSGTEXT*/                                           00240003
+   END                                                                  00250001
+  END I                                                                 00260001
+ END LOOPDD                                                             00270001
+END NJOB                                                                00280001
+SAY "COINCIDENCIAS ENCONTRADAS:" N                                      00300001
+SAY "SEGUNDOS TRANSCURRIDOS:" TIME(E)                                   00310001
+CALL ISFCALLS "OFF"                                                     00320001
+EXIT                                                                    00330001
+END NJOB                                                                00340001
+

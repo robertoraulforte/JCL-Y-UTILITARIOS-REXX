@@ -1,0 +1,38 @@
+/* REXX */                                                              00010000
+ARG FILENAME                                                            00010201
+/* 1. RECOGER EL NOMBRE DEL FICHERO INTRODUCIDO */                      00011101
+IF FILENAME = "" THEN DO                                                00011201
+    SAY "POR FAVOR, INTRODUZCA EL NOMBRE DEL FICHERO:"                  00011301
+    PULL FILENAME                                                       00011401
+END                                                                     00011501
+/* 2. COMPROBAR SI EL FICHERO EXISTE */                                 00012001
+DO WHILE FILENAME \\= ""                                                00020007
+    "LISTDS '"FILENAME"'"                                               00030001
+    IF RC \\== 0 EN DO                                                  00040007
+        SAY "EL FICHERO INTRODUCIDO NO SE ENCUENTRA O ES INCORRECTO."   00050001
+        SAY "POR FAVOR, INTRODUZCA EL NOMBRE DEL FICHERO:"              00060001
+        PULL FILENAME                                                   00070001
+    END                                                                 00080001
+    ELSE                                                                00090001
+       LEAVE                                                            00100001
+END                                                                     00120001
+/* 3. ATRAPAR LA SALIDA DEL COMANDO LISTDS */                           00130001
+"LISTDS '"FILENAME"'"                                                   00140001
+PARSE VAR SYSDSNOUT.1 . 'NAME:' DATASETNAME .                           00150001
+PARSE VAR SYSDSNOUT.3 . 'FORMATO DE REGISTRO:'                          00160001
+          RECFM 'LONGITUD DE REGISTRO:'                                 00170001
+          LRECL 'TAMA—O DEL BLOQUE:'                                    00171001
+/* 4. MOSTRAR LA INFORMACIÛN DEL FICHERO */                             00180001
+SAY "FICHERO" DATASETNAME                                               00190001
+SAY "FORMATO DE REGISTRO:" RECFM                                        00200001
+SAY "LONGITUD DE REGISTRO:" LRECL                                       00210001
+SAY "TAMAÒO DEL BLOQUE:" BLKSIZE                                        00220001
+IF DSORG = "PS" THEN                                                    00230001
+    SAY "ORGANIZACIÛN DEL FICHERO: PS (PLANO)"                          00240001
+ELSE IF DSORG = "PO" THEN                                               00250001
+    SAY "ORGANIZACIÛN DEL FICHERO: PDS (LIBRERÌA)"                      00260001
+/* 5. ACTIVAR LA LIBRERÌA */                                            00261001
+"TSO ALTLIB ACT APPL(EXEC) DSN('Z56575.CURSO')"                         00262001
+/* 6. USO DE TRACE PARA DEPURACIÛN */                                   00264001
+TRACE R                                                                 00265001
+

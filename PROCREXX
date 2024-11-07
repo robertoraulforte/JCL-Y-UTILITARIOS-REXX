@@ -1,0 +1,14 @@
+/* REXX */                                                              00010000
+TRACE ?A                                                                00010100
+SAY "HOLA"                                                              00010200
+NUM1= 5                                                                 00011000
+NUM2= 7                                                                 00011100
+CALL SUMAR NUM1,NUM2                                                    00011201
+SAY "EL RESULTADO ES:" RESULT                                           00011301
+EXIT                                                                    00011401
+SUMAR: PROCEDURE                                                        00011501
+    ARG NUMBER1,NUMBER2                                                 00011601
+    SAY "VAMOS A SUMAR DOS CANTIDADES:" NUMBER1 "Y" NUMBER2"."          00012001
+    SUMA = NUMBER1 + NUMBER2                                            00020001
+RETURN SUMA                                                             00030001
+

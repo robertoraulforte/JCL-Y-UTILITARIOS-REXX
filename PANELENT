@@ -1,0 +1,20 @@
+) ATTR                                                                  00010003
+?  TYPE(TEXT) INTENS(HIGH) JUST(LEFT) COLOR(BLUE) HILITE(REVERSE)       00010101
+(  TYPE(TEXT) INTENS(HIGH) COLOR(RED)                                   00010201
+#  TYPE(TEXT) INTENS(HIGH) COLOR(YELLOW)                                00010301
+/  TYPE(INPUT) PAD('_') CAPS(ON)                                        00010401
+) BODY                                                                  00010503
+% (PROGRAMA A EJECUTAR                                                  00010601
+% ----------------------------------------------------------------      00010701
+% # 1. LEER.                                                            00010801
+%                                                                       00010901
+% # 2. OUTTRAP.                                                         00011002
+%                                                                       00011101
+% # 3. PROG8.                                                           00011201
+%                                                                       00011301
+%     %?"ENTER REPORT NUMBER"%/Z%                                       00011401
+%                                                                       00011501
+) INIT                                                                  00011603
+   .ZVARS = '(OPCION)'                                                  00012001
+) END                                                                   00013004
+
